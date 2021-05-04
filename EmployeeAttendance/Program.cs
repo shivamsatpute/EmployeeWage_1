@@ -1,36 +1,36 @@
-﻿
-using System;
+﻿using System;
 
-namespace WageForMonth
-{
-    class Program
+namespace PracticeProblem
+{       /*UC3.:- Add Part time 
+                 Employee & Wage
+                 - Assume Part time Hour is 8
+        */
+    class EmployeeWageComputationProblem
     {
-
-        public const int IS_FULL_TIME = 1;     //Constant variable
-        public const int IS_PART_TIME = 2;
-        public const int EMP_RATE_PER_HOUR = 20;
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
+            int IS_FULL_TIME = 1;
+            int IS_PART_TIME = 2;
+            int EMP_RATE_PER_HOUR = 20;
             int empHrs = 0;
             int empWage = 0;
-            Random random = new Random();       //Random Class
-            int EmpCheack = random.Next(0, 3);      //Random Generate 0 ,1,2
-            switch (EmpCheack)          //Switch case Statment
+            Random random = new Random();
+            int empCheck = random.Next(0, 3);
+            if (empCheck == IS_FULL_TIME)
             {
-                case IS_FULL_TIME:         //Employee is FullTime=1
-                    empHrs = 8;
-                    break;
-                case IS_PART_TIME:          //Employee is FullTime=2
-                    empHrs = 4;
-                    break;
-                default:
-                    empHrs = 0;
-                    break;
+                empHrs = 8;
+
             }
-
-            empWage = EMP_RATE_PER_HOUR * empHrs;       // Calculate empWage
-            Console.WriteLine("Employe Wage Per Day:- " + empWage);     //Display empwage
+            else if (empCheck == IS_PART_TIME)
+            {
+                empHrs = 4;
+            }
+            else
+            {
+                empHrs = 0;
+            }
+            empWage = EMP_RATE_PER_HOUR * empHrs;
+            Console.WriteLine("Employe Wage Per Day:- " + empWage);
         }
-
     }
 }
