@@ -11,7 +11,7 @@ namespace PracticeProblem
         public const int MAX_WORKING_HRS = 100;
         public const int MAX_WORKING_DAYS = 20;
 
-        public static int ComputeEmployeeWage()     
+        public static int ComputeEmployeeWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
             int empHrs = 0;
             int empWage = 0;
@@ -46,9 +46,12 @@ namespace PracticeProblem
             Console.WriteLine("Working hours " + hrs);
             return totalEmpWage;
         }
-        public static void Main(String[] args)
+        static void Main(String[] args)
         {
-            EmployeeWageComputationProblem.ComputeEmployeeWage();
+            ComputeEmployeeWage("Dmart", 20, 2, 10);
+            ComputeEmployeeWage("Walmart", 20, 20, 50);
+            ComputeEmployeeWage("Freshmart ", 10, 6, 40);
+            ComputeEmployeeWage("Budget Foods", 20, 4, 10);
         }
     }
 }
